@@ -1,0 +1,27 @@
+{
+  "MessageId": "5bd704268d79845af868bac7",
+  "OrderId": "aed2622a-ff7c-4edd-b29b-051823c5eb96",
+  "CreateDate": "2018-10-29T12:59:18.309Z",
+  "Author": {
+    "foreignKey": 0,
+    "login": "stec.contractor@mail.ru",
+    "name": "stec.contractor@mail.ru"
+  },
+  "MessageType": 1,
+  "Text": "1",
+  "UrlContent": "",
+  "IsSystem": false,
+  "File": {
+    "contentType": "",
+    "fileName": "",
+    "lenght": 0,
+    "extension": "",
+    "dataBase64": null,
+    "url": "",
+    "messageTimeId": null,
+    "roleId": 0,
+    "displayName": null
+  },
+  "MessageTimeId": "2e04bc0f-c0cf-4600-ae59-dab2f3e9b1b7",
+  "RoleId": 0
+}

@@ -1,0 +1,22 @@
+{
+  "Id": "5bd7050b8d79845af868bacc",
+  "OrderId": "aed2622a-ff7c-4edd-b29b-051823c5eb96",
+  "CreateDate": "2018-10-29T13:03:07.432Z",
+  "Author": {
+    "ForeignKey": 0,
+    "login": "stec.customer@mail.ru",
+    "Name": "stec.customer@mail.ru"
+  },
+  "MessageType": 1,
+  "UrlContent": "",
+  "Text": "6",
+  "IsSystem": false,
+  "MessageTimeId": "ca2fc0c6-f54c-43b1-8b41-dbc7e7dbec85",
+  "FileUploadInfo": {
+    "ContentType": "",
+    "Filename": "",
+    "Lenght": 0,
+    "Extension": ""
+  },
+  "RoleId": 0
+}

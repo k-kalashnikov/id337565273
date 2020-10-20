@@ -1,0 +1,67 @@
+pipeline {
+    agent { label 'note--docker-netcore' }
+	environment {       
+		REGISTRY_IMAGE = "messenger.service"
+        REGISTRY_IMAGE_TAG = "prod"
+	}
+    stages {
+        stage('Checkout code...') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER=0 dotnet restore'
+                sh 'dotnet publish -c Release --no-restore'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Build container') {
+            steps {
+                echo 'Building docker containers...'
+                
+                withCredentials([string(credentialsId: 'stec_docker_hub_password', variable: 'dockerHubPassword')]) {
+                    sh 'docker login -u nginx -p ${dockerHubPassword} https://repository.stecpoint.ru'
+                }
+                            
+                echo 'Building REGISTRY_IMAGE...'
+                sh 'docker build -t ${REGISTRY_IMAGE} -f ./Dockerfile ./SP.Messenger.Hub.Service/bin/Release/netcoreapp3.1/publish --network=host'
+                sh 'docker tag ${REGISTRY_IMAGE} repository.stecpoint.ru/${REGISTRY_IMAGE}:${GIT_COMMIT}'
+                sh 'docker tag ${REGISTRY_IMAGE} repository.stecpoint.ru/${REGISTRY_IMAGE}:${REGISTRY_IMAGE_TAG}'
+                sh 'docker push repository.stecpoint.ru/${REGISTRY_IMAGE}:${REGISTRY_IMAGE_TAG}'
+
+            }
+        }
+		
+		stage('Deploy') {
+			steps([$class: 'BapSshPromotionPublisherPlugin']) {
+				sshPublisher(
+					continueOnError: false, failOnError: true,
+					publishers: [
+						sshPublisherDesc(
+							configName: "mto_lahta-spb_ru",
+							verbose: true,
+							transfers: [
+								sshTransfer(                                 
+								    removePrefix: "Deployment/k8s/mto.lahta-spb.ru",
+								    remoteDirectory: "k8s",
+                                    sourceFiles: "Deployment/k8s/mto.lahta-spb.ru/**",
+                                    ),
+								sshTransfer
+                                (                                    
+                                    execCommand: "chmod +x /var/www/deployment/k8s/deploy-messenger-service.sh && /var/www/deployment/k8s/deploy-messenger-service.sh"                                    
+                                ),
+							]
+						)
+					]
+				)
+			}
+		}
+	}
+}

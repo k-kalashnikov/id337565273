@@ -1,0 +1,26 @@
+{
+  "MessageId": 1,
+  "ChatId": 1,
+  "MessageTypeId": 1,
+  "CreateDate": "2019-06-26T21:15:18.309Z",
+  "AccountId": 2,
+  "Content": "",
+  "File": {
+    "ContentType": "",
+    "Filename": "",
+    "Lenght": 0,
+    "Extension": ""
+  },
+  "Tags": {
+    "EventBot": "",
+    "ChatTypeId": 1,
+    "DocumentId": "",
+    "DocumentStatus": 1,
+    "StageId": 1,
+    "StageStatus": 1,
+    "Contract": "aed2622a-ff7c-4edd-b29b-051823c5eb96",
+    "ContractAgreement": "aed2622a-ff7c-4edd-b29b-051823c5eb96",
+    "Communication": "",
+    "Contractor": ""
+  }
+}
