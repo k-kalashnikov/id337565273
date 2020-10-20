@@ -27,68 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Messenger.Hub.Service", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{20ACAA7E-108A-4B77-90AC-B1EB5B46CBF5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{21C720FB-ED16-49AC-A98B-9A6DFAF85079}"
-	ProjectSection(SolutionItems) = preProject
-		Dapper.Contrib.dll = Dapper.Contrib.dll
-		SP.Market.Core.dll = SP.Market.Core.dll
-		SP.Market.Domains.dll = SP.Market.Domains.dll
-		SP.Market.EventBus.RMQ.Shared.dll = SP.Market.EventBus.RMQ.Shared.dll
-		Stecpoint.Base.dll = Stecpoint.Base.dll
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Messenger.Integration.Test", "SP.Messenger.Integration.Test\SP.Messenger.Integration.Test.csproj", "{D1D7FED2-A994-449F-93E8-E1D6793E4036}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Messenger.Events", "SP.Messenger.Events\SP.Messenger.Events.csproj", "{ECE544AC-E6FD-4E03-B53B-015AC1458E18}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{B41FB43F-85F7-46B8-B353-BB354B78205A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{E3CDA791-4FD0-4091-9B69-5CF0D320BFBA}"
-	ProjectSection(SolutionItems) = preProject
-		Jenkinsfile_preprod = Jenkinsfile_preprod
-		Jenkinsfile_prod = Jenkinsfile_prod
-		Jenkinsfile_stage = Jenkinsfile_stage
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mto.lahta-spb.ru", "mto.lahta-spb.ru", "{8507E490-D18D-4FBC-9165-27C77F0FE40C}"
-	ProjectSection(SolutionItems) = preProject
-		Deployment\k8s\mto.lahta-spb.ru\deploy-messenger-service.sh = Deployment\k8s\mto.lahta-spb.ru\deploy-messenger-service.sh
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mto-test.lahta-spb.ru", "mto-test.lahta-spb.ru", "{4D95C102-F677-420A-B2C7-B5E1CE2BF24A}"
-	ProjectSection(SolutionItems) = preProject
-		Deployment\k8s\mto-test.lahta-spb.ru\deploy-messenger-service.sh = Deployment\k8s\mto-test.lahta-spb.ru\deploy-messenger-service.sh
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messenger.service", "messenger.service", "{C65FF2C3-A106-4F26-AAC3-03C1FD7CF460}"
-	ProjectSection(SolutionItems) = preProject
-		Deployment\k8s\mto.lahta-spb.ru\messenger.service\configmap.yaml = Deployment\k8s\mto.lahta-spb.ru\messenger.service\configmap.yaml
-		Deployment\k8s\mto.lahta-spb.ru\messenger.service\deployment.yaml = Deployment\k8s\mto.lahta-spb.ru\messenger.service\deployment.yaml
-		Deployment\k8s\mto.lahta-spb.ru\messenger.service\service.yaml = Deployment\k8s\mto.lahta-spb.ru\messenger.service\service.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messenger.service", "messenger.service", "{8E56DCF5-CEA4-4591-9299-327BB2A663D1}"
-	ProjectSection(SolutionItems) = preProject
-		Deployment\k8s\mto-test.lahta-spb.ru\messenger.service\configmap.yaml = Deployment\k8s\mto-test.lahta-spb.ru\messenger.service\configmap.yaml
-		Deployment\k8s\mto-test.lahta-spb.ru\messenger.service\deployment.yaml = Deployment\k8s\mto-test.lahta-spb.ru\messenger.service\deployment.yaml
-		Deployment\k8s\mto-test.lahta-spb.ru\messenger.service\service.yaml = Deployment\k8s\mto-test.lahta-spb.ru\messenger.service\service.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mto-stage.lahta-spb.ru", "mto-stage.lahta-spb.ru", "{6F1E3B1E-E47A-4DF6-AE80-9EDD44C35567}"
-	ProjectSection(SolutionItems) = preProject
-		Deployment\k8s\mto-stage.lahta-spb.ru\deploy-messenger-service.sh = Deployment\k8s\mto-stage.lahta-spb.ru\deploy-messenger-service.sh
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messenger.service", "messenger.service", "{2847D7BE-6CC1-4EEF-BB40-02EFB2755065}"
-	ProjectSection(SolutionItems) = preProject
-		Deployment\k8s\mto-stage.lahta-spb.ru\messenger.service\configmap.yaml = Deployment\k8s\mto-stage.lahta-spb.ru\messenger.service\configmap.yaml
-		Deployment\k8s\mto-stage.lahta-spb.ru\messenger.service\deployment.yaml = Deployment\k8s\mto-stage.lahta-spb.ru\messenger.service\deployment.yaml
-		Deployment\k8s\mto-stage.lahta-spb.ru\messenger.service\service.yaml = Deployment\k8s\mto-stage.lahta-spb.ru\messenger.service\service.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A76E038A-E87E-4E59-AB24-DDFAA07963F4}"
-	ProjectSection(SolutionItems) = preProject
-		Scripts\Актуализация акаунтов в мессенджере.sql = Scripts\Актуализация акаунтов в мессенджере.sql
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,16 +85,8 @@ Global
 		{0927E550-C0A6-4256-91D7-C5F93D32A817} = {A35D04C6-11B6-410D-A66D-606A274B83D5}
 		{4B0D62E8-EBE9-450A-A96F-A870873C1A2E} = {D9C790E8-6F27-43BA-B97E-0DBFD6872C21}
 		{5C385E7E-7C2C-4483-B8E2-24295465CF24} = {20ACAA7E-108A-4B77-90AC-B1EB5B46CBF5}
-		{21C720FB-ED16-49AC-A98B-9A6DFAF85079} = {7F9C6821-C67A-42B5-9CD7-9FBF7FCEC28F}
 		{D1D7FED2-A994-449F-93E8-E1D6793E4036} = {A35D04C6-11B6-410D-A66D-606A274B83D5}
 		{ECE544AC-E6FD-4E03-B53B-015AC1458E18} = {E9FA21FF-41DE-44FC-BBCC-B768516A251B}
-		{E3CDA791-4FD0-4091-9B69-5CF0D320BFBA} = {B41FB43F-85F7-46B8-B353-BB354B78205A}
-		{8507E490-D18D-4FBC-9165-27C77F0FE40C} = {E3CDA791-4FD0-4091-9B69-5CF0D320BFBA}
-		{4D95C102-F677-420A-B2C7-B5E1CE2BF24A} = {E3CDA791-4FD0-4091-9B69-5CF0D320BFBA}
-		{C65FF2C3-A106-4F26-AAC3-03C1FD7CF460} = {8507E490-D18D-4FBC-9165-27C77F0FE40C}
-		{8E56DCF5-CEA4-4591-9299-327BB2A663D1} = {4D95C102-F677-420A-B2C7-B5E1CE2BF24A}
-		{6F1E3B1E-E47A-4DF6-AE80-9EDD44C35567} = {E3CDA791-4FD0-4091-9B69-5CF0D320BFBA}
-		{2847D7BE-6CC1-4EEF-BB40-02EFB2755065} = {6F1E3B1E-E47A-4DF6-AE80-9EDD44C35567}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {728F205C-B1B4-4349-A2B5-7C8FE8CEEB84}
